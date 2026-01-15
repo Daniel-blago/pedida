@@ -1,0 +1,136 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1ff, #cdb4db);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.card {
+  background: white;
+  padding: 80px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0,0,0,0.4);
+  width: 95%;
+  max-width: 1000px;
+}
+
+
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background: #ccc;
+}
+
+.gallery img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.papitas span {
+  position: fixed;
+  top: -50px;
+  font-size: 30px;
+  animation: caer 10s linear infinite;
+  opacity: 0.8;
+}
+
+.papitas span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.papitas span:nth-child(2) { left: 20%; animation-delay: 2s; }
+.papitas span:nth-child(3) { left: 30%; animation-delay: 4s; }
+.papitas span:nth-child(4) { left: 40%; animation-delay: 1s; }
+.papitas span:nth-child(5) { left: 50%; animation-delay: 3s; }
+.papitas span:nth-child(6) { left: 60%; animation-delay: 5s; }
+.papitas span:nth-child(7) { left: 70%; animation-delay: 2s; }
+.papitas span:nth-child(8) { left: 80%; animation-delay: 4s; }
+.papitas span:nth-child(9) { left: 90%; animation-delay: 1s; }
+
+@keyframes caer {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(110vh); }
+}
+@media (max-width: 768px) {
+  .card {
+    padding: 40px;
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .gallery {
+    flex-wrap: wrap;
+  }
+
+  .gallery img {
+    width: 45vw;
+    height: 45vw;
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  .card h1 {
+    font-size: 28px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+#starMode {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #050018, #000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  z-index: 3000;
+  color: white;
+  text-align: center;
+}
+
+.star {
+  font-size: 120px;
+  animation: pulse 2s infinite alternate;
+}
+
+.starText {
+  font-size: 32px;
+  max-width: 80%;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(1.3); opacity: 1; }
+}
+
